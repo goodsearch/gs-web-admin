@@ -7,6 +7,7 @@ var Header = React.createClass({
       <nav>
         <h1>Navigation here!</h1>
         <Link href="/">Home</Link>
+        <Link href="/dummy">Dummy Page</Link>
       </nav>
     );
   }
