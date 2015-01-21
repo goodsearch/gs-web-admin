@@ -6,6 +6,7 @@ var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source       = require('vinyl-source-stream');
 var config       = require('../config').browserify;
+var reactify     = require('reactify');
 var _            = require('lodash');
 
 var browserifyTask = function(callback, devMode) {
@@ -27,6 +28,7 @@ var browserifyTask = function(callback, devMode) {
       bundleLogger.start(bundleConfig.outputName);
 
       return b
+        .transform(reactify)
         .bundle()
         // report compile errors
         .on('error', handleErrors)

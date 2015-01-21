@@ -29,12 +29,15 @@
   },
   "dependencies": {
     "fibers": "^1.0.5",
+    "gulp-nodemon": "^1.0.5",
     "koa": "^0.15.0",
     "koa-favicon": "^1.2.0",
+    "koa-static": "^1.4.8",
     "node-jsx": "^0.12.4",
     "react": "^0.12.2",
     "react-async": "^2.0.1",
     "react-router-component": "^0.23.2",
+    "reactify": "^0.17.1",
     "serialize-javascript": "^1.0.0",
     "superagent": "^0.21.0"
   }
