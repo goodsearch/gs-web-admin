@@ -11,11 +11,12 @@ module.exports = {
   },
 
   stylus: {
-    src:       src + '/stylus/*.styl',
-    dest:      dest,
+    src:       src + '/styles/app.styl',
+    dest:      dest + '/css',
     settings:  {
       sourceComments:  'map',
-      imagePath:       '/images'
+      imagePath:       '/images',
+      'include css':   true
     }
   },
 

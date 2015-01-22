@@ -1,0 +1,39 @@
+@import 'reset.css'
+@import colors
+
+// universals -------------------------------------------------
+#main
+  > div * + *
+    margin-top: 1em
+
+  nav, div
+    padding: .5rem
+
+// global nav -------------------------------------------------
+nav
+  background san-marino
+  display flex
+  font-family Dosis
+
+  h1
+    font-size: 1.5rem
+    color white
+    flex 1
+
+  ul
+    margin: 0
+    flex 0 0 35px
+    display none
+
+    &:before
+      content ''
+      display block
+      width 35px
+      height 35px
+      background red
+
+    > li
+      display none
+
+    &:hover > li
+      display block
