@@ -5,10 +5,9 @@ var Header = React.createClass({
   render: function() {
     return (
       <nav>
-        <h1>Landing Page CMS</h1>
+        <Link href="/"><h1>GS Web Admin</h1></Link>
         <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/dummy">Dummy Page</Link></li>
+          <li><Link href="/landing-pages">Landing Pages</Link></li>
         </ul>
       </nav>
     );

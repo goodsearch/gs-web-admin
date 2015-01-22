@@ -14,26 +14,23 @@ nav
   background san-marino
   display flex
   font-family Dosis
+  align-items center
+
+  a
+    color white
+    text-decoration none
 
   h1
     font-size: 1.5rem
-    color white
     flex 1
 
   ul
     margin: 0
-    flex 0 0 35px
-    display none
+    flex 1
+    text-align right
 
-    &:before
-      content ''
-      display block
-      width 35px
-      height 35px
-      background red
+    li
+      display inline-block
 
-    > li
-      display none
-
-    &:hover > li
-      display block
+      & + li
+        margin-left 1rem

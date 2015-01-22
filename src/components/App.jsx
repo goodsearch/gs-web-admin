@@ -7,6 +7,7 @@ var NotFound  = Router.NotFound
 var AppLayout = require('./AppLayout.jsx');
 
 var HomePage     = require('./pages/Home.jsx');
+var LandingPages = require('./pages/LandingPages.jsx');
 var LandingPage  = require('./pages/LandingPage.jsx');
 var NotFoundPage = require('./pages/NotFoundPage.jsx');
 
@@ -16,6 +17,7 @@ var App = React.createClass({
       <AppLayout>
         <Locations path={this.props.path}>
           <Location path="/" handler={HomePage} />
+          <Location path="/landing-pages" handler={LandingPages} />
           <Location path="/landing-pages/:name" handler={LandingPage} />
           <NotFound handler={NotFoundPage} />
         </Locations>

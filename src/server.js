@@ -7,13 +7,9 @@ var router    = require('koa-router');
 var mount     = require('koa-mount');
 var path      = require('path');
 var React     = require('react');
-var mongoose  = require('mongoose');
 var App       = React.createFactory(require('./components/App.jsx'));
 var server    = koa();
 var api       = require('./api.js');
-
-// connect to mongo
-mongoose.connect('mongodb://localhost/gs-web-admin');
 
 server.use(
   favicon(path.resolve(__dirname + '/../build/images/favicon.ico'))
@@ -25,10 +21,10 @@ server.use(router(server));
 var APIRouter = new router();
 
 var renderToReact = function *() {
-  // console.info('server request received');
   this.body = React.renderToString(App({ path: this.path }));
 };
 
+APIRouter.get('/landing-pages', api.getAllLandingPages);
 APIRouter.get('/landing-pages/:name', api.getLandingPage);
 
 server.use(mount('/api', APIRouter.middleware()));

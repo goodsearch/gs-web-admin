@@ -1,10 +1,9 @@
 var React = require('react');
+var ISVG  = require('react-inlinesvg');
 
 var NotFoundPage = React.createClass({
   render: function() {
-    return (
-      <h1>Page Not Found</h1>
-    );
+    return <ISVG src="/images/404.svg" />;
   }
 });
 
