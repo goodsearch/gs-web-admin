@@ -1,11 +1,25 @@
 var React        = require('react');
-var Router       = require('react-router-component');
+var Async        = require('react-async');
+var request      = require('superagent');
+var NotFoundPage = require('./NotFoundPage.jsx');
 
 var LandingPage = React.createClass({
+  mixins: [Async.Mixin],
+
+  getInitialStateAsync: function(cb) {
+    request.get('/api/landing-pages/' + this.props.name, function(resp) {
+      cb(null, resp.body);
+    });
+  },
+
   render: function() {
-    return (
-      <h1>Viewing the landing page: {this.props.name}</h1>
-    );
+    if (this.state.message) {
+      return (
+        <h1>Viewing the landing page: {this.state.message}</h1>
+      );
+    } else {
+      return <NotFoundPage />;
+    }
   }
 });
 

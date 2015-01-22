@@ -3,6 +3,9 @@ var dest = './build',
 
 module.exports = {
   browserify: {
+    cache: {},
+    packageCache: {},
+    fullPaths: true,
     bundleConfigs: [{
       entries:     src + '/client.js',
       dest:        dest + '/js',

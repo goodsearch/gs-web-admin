@@ -5,7 +5,7 @@ var static    = require('koa-static');
 var favicon   = require('koa-favicon');
 var router    = require('koa-router');
 var mount     = require('koa-mount');
-var serialize = require('serialize-javascript');
+var path      = require('path');
 var React     = require('react');
 var mongoose  = require('mongoose');
 var App       = React.createFactory(require('./components/App.jsx'));
@@ -15,17 +15,17 @@ var api       = require('./api.js');
 // connect to mongo
 mongoose.connect('mongodb://localhost/gs-web-admin');
 
-server.use(favicon(__dirname + '../build/images/favicon.ico'));
-server.use(static('build/js'));
-server.use(static('build/images'));
-server.use(static('build/css'));
+server.use(
+  favicon(path.resolve(__dirname + '/../build/images/favicon.ico'))
+);
+server.use(static('build'));
 server.use(router(server));
 
 // routes
 var APIRouter = new router();
 
 var renderToReact = function *() {
-  console.info('server request received');
+  // console.info('server request received');
   this.body = React.renderToString(App({ path: this.path }));
 };
 
