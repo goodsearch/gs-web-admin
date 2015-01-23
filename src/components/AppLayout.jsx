@@ -8,6 +8,7 @@ var AppLayout = React.createClass({
         <head lang="en">
           <meta charSet="utf-8" />
           <link rel="stylesheet" href="/css/app.css" />
+          <link rel="stylesheet" href="/css/theme.css" />
         </head>
         <body>
           <div id="main">

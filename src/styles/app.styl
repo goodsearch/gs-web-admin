@@ -3,11 +3,8 @@
 
 // universals -------------------------------------------------
 #main
-  > div * + *
-    margin-top: 1em
-
-  nav, div
-    padding: .5rem
+  > div, nav
+    padding: 1rem
 
 // global nav -------------------------------------------------
 nav
@@ -34,3 +31,17 @@ nav
 
       & + li
         margin-left 1rem
+
+// admin blocks -------------------------------------------------
+.admin
+  &.block
+    border-radius 5px
+
+    & + .block
+      margin-top 1rem
+
+    &.create
+      padding: .5rem
+      background madison
+      color humming-bird
+      fill humming-bird

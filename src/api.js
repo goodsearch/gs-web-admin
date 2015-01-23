@@ -9,7 +9,7 @@ module.exports = {
 
     if (page) {
       this.type = 'json';
-      this.body = { message: 'requested page for ' + page.name };
+      this.body = { page: page };
     }
   },
 

@@ -14,7 +14,7 @@ module.exports = {
   },
 
   stylus: {
-    src:       src + '/styles/app.styl',
+    src:       [src + '/styles/app.styl', src + '/styles/theme.styl'],
     dest:      dest + '/css',
     settings:  {
       sourceComments:  'map',
