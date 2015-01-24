@@ -8,6 +8,7 @@ var Header = React.createClass({
         <Link href="/"><h1>GS Web Admin</h1></Link>
         <ul>
           <li><Link href="/landing-pages">Landing Pages</Link></li>
+          <li><a href="/api/landing-pages">API Landing Pages</a></li>
         </ul>
       </nav>
     );

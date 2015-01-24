@@ -14,7 +14,7 @@ module.exports = {
   },
 
   getAllLandingPages: function*() {
-    var pages = yield landingPages.find({});
+    var pages = yield landingPages.find({}, 'name');
     this.type = 'json';
     this.body = { pages: pages };
   }

@@ -18,10 +18,15 @@ server.use(static('build'));
 server.use(router(server));
 
 // routes
-var APIRouter = new router();
+var APIRouter    = new router();
+var ClientRouter = new router();
 
 var renderToReact = function *() {
   this.body = React.renderToString(App({ path: this.path }));
+};
+
+var renderToClientReact = function *() {
+  this.body = React.renderToString(ClientApp({ path: this.path }));
 };
 
 APIRouter.get('/landing-pages', api.getAllLandingPages);
