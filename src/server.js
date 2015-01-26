@@ -8,6 +8,7 @@ var mount     = require('koa-mount');
 var path      = require('path');
 var React     = require('react');
 var App       = React.createFactory(require('./components/App.jsx'));
+var ClientApp = React.createFactory(require('./components/ClientApp.jsx'));
 var server    = koa();
 var api       = require('./api.js');
 
@@ -38,7 +39,13 @@ server.use(mount('/api', APIRouter.middleware()));
 server.use(function *(next) {
   yield next;
   var status = this.status || 404;
-  if (status === 404) yield renderToReact;
+  if (status === 404) {
+    if (!/edit$/.test(this.path)) {
+      yield renderToClientReact;
+    } else {
+      yield renderToReact;
+    }
+  }
 });
 
 server.listen(8000);

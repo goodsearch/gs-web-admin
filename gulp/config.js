@@ -10,6 +10,10 @@ module.exports = {
       entries:     src + '/client.js',
       dest:        dest + '/js',
       outputName:  'client.js'
+    }, {
+      entries:     src + '/app.js',
+      dest:        dest + '/js',
+      outputName:  'app.js'
     }]
   },
 

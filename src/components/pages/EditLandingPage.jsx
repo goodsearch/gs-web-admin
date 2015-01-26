@@ -5,7 +5,7 @@ var NotFoundPage  = require('./NotFoundPage.jsx');
 var blockSelector = require('../blockSelector.js');
 var _             = require('lodash');
 
-var LandingPage = React.createClass({
+var EditLandingPage = React.createClass({
   mixins: [Async.Mixin],
 
   getDefaultProps: function() {
@@ -37,6 +37,16 @@ var LandingPage = React.createClass({
         });
       });
 
+      if (blocks.length > 1) {
+        for (var i = 0; i < blocks.length + 1; i++) {
+          blockSeparators.push(React.createElement(blockSelector().element, {
+            key: 'separator:' + i
+          }));
+        }
+
+        blocks = _.compact(_.flatten(_.zip(blockSeparators, blocks)));
+      }
+
       return (
         <div className={this.props.themeName}>{blocks}</div>
       );
@@ -46,4 +56,4 @@ var LandingPage = React.createClass({
   }
 });
 
-module.exports = LandingPage;
+module.exports = EditLandingPage;
