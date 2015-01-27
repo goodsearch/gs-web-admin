@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neezer/gs-web-admin.git"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "0.11.14"
+  },
   "devDependencies": {
     "browser-sync": "^1.9.0",
     "browserify": "^8.1.1",
@@ -23,13 +30,13 @@
     "gulp-util": "^3.0.2",
     "lodash": "^2.4.1",
     "pretty-hrtime": "^1.0.0",
+    "react-tools": "^0.12.2",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.2.1"
   },
   "dependencies": {
     "co-monk": "^1.0.0",
-    "fibers": "^1.0.5",
     "gulp-nodemon": "^1.0.5",
     "koa": "^0.15.0",
     "koa-favicon": "^1.2.0",
