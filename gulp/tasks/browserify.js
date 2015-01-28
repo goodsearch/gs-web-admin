@@ -1,6 +1,4 @@
 var browserify   = require('browserify');
-var browserSync  = require('browser-sync');
-var watchify     = require('watchify');
 var bundleLogger = require('../util/bundleLogger');
 var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
@@ -11,6 +9,11 @@ var _            = require('lodash');
 
 var browserifyTask = function(callback, devMode) {
   var bundleQueue = config.bundleConfigs.length;
+
+  if (devMode) {
+    var browserSync  = require('browser-sync');
+    var watchify     = require('watchify');
+  }
 
   var browserifyThis = function(bundleConfig) {
     if(devMode) {
@@ -36,13 +39,12 @@ var browserifyTask = function(callback, devMode) {
         // the disired output filename here
         .pipe(source(bundleConfig.outputName))
         .pipe(gulp.dest(bundleConfig.dest))
-        .on('end', reportFinished)
-        .pipe(browserSync.reload({ stream: true }));
+        .on('end', reportFinished);
     };
 
     if(devMode) {
       // wrap with watchify and rebundle on changes
-      b = watchify(b);
+      b = watchify(b.pipe(browserSync.reload({ stream: true })));
       // rebundle on update
       b.on('update', bundle);
       bundleLogger.watch(bundleConfig.outputName);
