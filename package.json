@@ -8,7 +8,7 @@
     "url": "https://github.com/neezer/gs-web-admin.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R nyan -w --check-leaks --recursive test/**/*-test.*"
+    "test": "./node_modules/.bin/mocha -R dot -w --check-leaks --recursive test/**/*-test.*"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "node": "0.11.14"
   },
   "devDependencies": {
+    "better-assert": "^1.0.2",
     "browser-sync": "^1.9.0",
     "browserify": "^8.1.1",
     "gulp": "^3.8.10",
