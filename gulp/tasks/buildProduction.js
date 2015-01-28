@@ -1,1 +1,5 @@
-require('gulp').task('build:production', ['stylus', 'images', 'browserify']);
+require('gulp').task('build:production', [
+  'stylus',
+  'images',
+  'build:production:js'
+]);

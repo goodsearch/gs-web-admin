@@ -8,6 +8,8 @@ var reactify     = require('reactify');
 var _            = require('lodash');
 var buffer = require('vinyl-buffer');
 
+var production = process.env.NODE_ENV === 'production';
+
 var browserifyTask = function(callback, devMode) {
   var bundleQueue = config.bundleConfigs.length;
 
@@ -19,8 +21,6 @@ var browserifyTask = function(callback, devMode) {
   var browserifyThis = function(bundleConfig) {
     if(devMode) {
       _.extend(bundleConfig, watchify.args, { debug: true });
-      // a watchify require/external bug that prevents proper recompiling, so
-      // (for now) we'll ignore these options during development
       bundleConfig = _.omit(bundleConfig, ['external', 'require']);
     }
 
