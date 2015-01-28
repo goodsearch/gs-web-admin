@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "node --harmony ./src/server.js",
-    "test": "./node_modules/.bin/mocha -R dot --check-leaks --recursive test/**/*-test.*",
-    "postinstall": "node ./node_modules/.bin/gulp build:production"
+    "test": "mocha -R dot --check-leaks --recursive test/**/*-test.*",
+    "postinstall": "gulp build:production"
   },
   "author": "",
   "license": "ISC",
