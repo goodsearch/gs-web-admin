@@ -12,6 +12,9 @@
     "test": "mocha -R dot --check-leaks --recursive test/**/*-test.*",
     "postinstall": "gulp build:production"
   },
+  "browser" : {
+    "jsdom" : false
+  },
   "author": "",
   "license": "ISC",
   "engines": {
