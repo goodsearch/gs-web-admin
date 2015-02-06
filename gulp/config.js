@@ -7,10 +7,6 @@ module.exports = {
     packageCache: {},
     fullPaths: true,
     bundleConfigs: [{
-      entries:     src + '/client.js',
-      dest:        dest + '/js',
-      outputName:  'client.js'
-    }, {
       entries:     src + '/app.js',
       dest:        dest + '/js',
       outputName:  'app.js'
@@ -18,7 +14,7 @@ module.exports = {
   },
 
   stylus: {
-    src:       [src + '/styles/app.styl', src + '/styles/theme.styl'],
+    src:       [src + '/styles/*.styl'],
     dest:      dest + '/css',
     settings:  {
       sourceComments:  'map',
@@ -33,10 +29,10 @@ module.exports = {
   },
 
   browserSync: {
-    proxy: 'localhost:8000'
+    proxy: 'localhost:8001'
   },
 
   nodemon: {
-    script: src + '/server.js'
+    script: './index.js'
   }
 };
