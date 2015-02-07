@@ -4,7 +4,7 @@ var React  = require('react');
 var Layout = require('./Layout.jsx');
 
 module.exports = React.createClass({
-  displayName: 'Top',
+  displayName: 'Dashboard',
 
   render: function() {
     return (
