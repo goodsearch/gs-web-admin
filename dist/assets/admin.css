@@ -50,6 +50,7 @@ table {
 body {
   background: #fff;
   font-family: Lato, sans-serif;
+  height: 100%;
 }
 * {
   box-sizing: border-box;
@@ -78,7 +79,6 @@ body {
           order: 3;
   background: #323245;
   color: #97969e;
-  height: calc(100% - 5rem);
 }
 #app .admin-nav > * {
   padding: 1rem;
@@ -107,9 +107,9 @@ body {
           order: 1;
 }
 #app .admin-masthead {
-  -webkit-flex: 1 calc(100% - 250px);
-      -ms-flex: 1 calc(100% - 250px);
-          flex: 1 calc(100% - 250px);
+  -webkit-flex: 1 calc(100vw - 250px);
+      -ms-flex: 1 calc(100vw - 250px);
+          flex: 1 calc(100vw - 250px);
   height: 5rem;
   -webkit-order: 2;
       -ms-flex-order: 2;
@@ -134,9 +134,10 @@ body {
   -webkit-order: 4;
       -ms-flex-order: 4;
           order: 4;
-  height: calc(100% - 5rem);
   background: #f6f6f6;
   padding: 1rem;
+  width: calc(100vw - 250px);
+  min-height: calc(100vh - 5rem);
 }
 #app .admin-content > ul .loading-message {
   display: none;

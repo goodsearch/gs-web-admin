@@ -47,11 +47,13 @@
     "koa-static": "^1.4.9",
     "node-jsx": "^0.12.4",
     "promise": "^6.1.0",
+    "ramda": "^0.9.1",
     "react": "^0.12.2",
     "react-router": "^0.11.6",
     "reactify": "^1.0.0",
     "superagent": "^0.21.0",
-    "superagent-promise": "^0.2.0"
+    "superagent-promise": "^0.2.0",
+    "gs-web": "neezer/gs-web"
   },
   "browserify": {
     "transform": [

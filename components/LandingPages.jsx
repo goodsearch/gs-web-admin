@@ -1,11 +1,9 @@
 'use strict';
 
-var React      = require('react');
-var Nav        = require('./Nav.jsx');
-var Masthead   = require('./Masthead.jsx');
-var UserAnchor = require('./UserAnchor.jsx');
+var React           = require('react');
+var request         = require('superagent');
+var Layout          = require('./Layout.jsx');
 var LandingPageList = require('./LandingPageList.jsx');
-var request    = require('superagent');
 
 module.exports = React.createClass({
   displayName: 'LandingPages',
@@ -25,14 +23,9 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <UserAnchor />
-        <Nav current="landing-pages" />
-        <Masthead title="Landing Pages" />
-        <div className="admin-content">
-          <LandingPageList pages={this.state.pages} loading={this.state.loading} />
-        </div>
-      </div>
+      <Layout current="landing-pages" title="Landing Pages">
+        <LandingPageList pages={this.state.pages} loading={this.state.loading} />
+      </Layout>
     );
   }
 });

@@ -3,13 +3,13 @@
 var React = require('react');
 
 module.exports = React.createClass({
+  displayName: 'Masthead',
+
   getDefaultProps: function() {
     return {
       title: 'Admin'
     };
   },
-
-  displayName: 'Masthead',
 
   render: function() {
     return(

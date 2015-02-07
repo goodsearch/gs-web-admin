@@ -10,7 +10,7 @@ module.exports = React.createClass({
     var pages = this.props.pages.map(function(page) {
       return (
         <li key={page.name}>
-          <Link to="landing-pages/:name/edit" params={page}>{page.name}</Link>
+          <Link to="edit-landing-page" params={page}>{page.name}</Link>
         </li>
       );
     });

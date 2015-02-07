@@ -11,7 +11,7 @@ var EditLandingPage = require('./components/EditLandingPage.jsx');
 module.exports = (
   <Route name="dash" handler={App} path="/">
     <Route name="landing-pages" handler={LandingPages} />
-    <Route name="landing-pages/:name/edit" handler={EditLandingPage} />
+    <Route name="edit-landing-page" path="landing-pages/:name/edit" handler={EditLandingPage} />
     <DefaultRoute handler={Top} />
   </Route>
 )
