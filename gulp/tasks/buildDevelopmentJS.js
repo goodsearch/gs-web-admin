@@ -1,4 +1,5 @@
-var gulp = require('gulp');
-// uglify later
+var gulp   = require('gulp');
+
+require('./browserify.js');
 
 gulp.task('build:development:js', ['browserify']);

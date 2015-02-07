@@ -1,14 +1,13 @@
 'use strict';
 
 var React = require('react');
-var Link  = require('react-router').Link;
 
 module.exports = React.createClass({
-  displayName: 'Footer',
+  displayName: 'UserAnchor',
 
   render: function() {
     return (
-      <footer></footer>
+      <div className="admin-user-anchor"></div>
     );
   }
 });

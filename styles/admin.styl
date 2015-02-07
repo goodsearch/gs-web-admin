@@ -1,0 +1,80 @@
+@import 'reset.css'
+
+slate = #323245
+haze = #f6f6f6
+dull-creame = #97969e
+royal = #ad7fd5
+
+body
+  background white
+  font-family Lato, sans-serif
+
+*
+  box-sizing border-box
+
+#app
+  display flex
+  flex-wrap wrap
+
+  > div
+    display inherit
+    flex-wrap wrap
+    width 100%
+
+  .admin-nav
+    flex 0 1 250px
+    order 3
+    background slate
+    color dull-creame
+    height calc(100% - 5rem)
+
+    > *
+      padding 1rem
+
+    li
+      & + li
+        margin-top 1rem
+
+      &.active a
+        color white
+
+    a
+      color dull-creame
+      text-decoration none
+      text-transform uppercase
+
+  .admin-user-anchor
+    background royal url('/totoro.png') no-repeat
+    background-position center 4px
+    background-size 50%
+    height 5rem
+    flex 0 1 250px
+    order 1
+
+  .admin-masthead
+    flex 1 calc(100% - 250px)
+    height 5rem
+    order 2
+    background white
+    padding 1rem
+    display flex
+    align-items center
+
+    h1
+      font-weight 600
+      font-size 1.65rem
+
+  .admin-content
+    flex 1 auto
+    order 4
+    height calc(100% - 5rem)
+    background haze
+    padding 1rem
+
+    > ul
+      .loading-message
+        display none
+
+      &.is-loading
+        .loading-message
+          display inline-block

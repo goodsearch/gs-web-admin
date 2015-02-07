@@ -11,7 +11,9 @@ module.exports = React.createClass({
     return (
       <div>
         <Nav current="first" />
-        <h1>I&rsquo;m Page Two!!</h1>
+        <div className="content">
+          <h1>I&rsquo;m Page Two!!</h1>
+        </div>
         <Footer />
       </div>
     );

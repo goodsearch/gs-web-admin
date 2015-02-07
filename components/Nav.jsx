@@ -1,6 +1,6 @@
 'use strict';
 
-var React = require('react');
+var React = require('react/addons');
 var Link  = require('react-router').Link;
 
 module.exports = React.createClass({
@@ -18,14 +18,16 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <ul className="nav">
-        <li className={this.getNavItemClassName('first')}>
-          <Link to="first">PageOne</Link>
-        </li>
-        <li className={this.getNavItemClassName('second')}>
-          <Link to="second">PageTwo</Link>
-        </li>
-      </ul>
+      <div className="admin-nav">
+        <ul>
+          <li className={this.getNavItemClassName('dash')}>
+            <Link to="dash">Dashboard</Link>
+          </li>
+          <li className={this.getNavItemClassName('landing-pages')}>
+            <Link to="landing-pages">Landing Pages</Link>
+          </li>
+        </ul>
+      </div>
     );
   }
 });

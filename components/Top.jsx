@@ -1,8 +1,9 @@
 'use strict';
 
-var React  = require('react');
-var Nav    = require('./Nav.jsx');
-var Footer = require('./Footer.jsx');
+var React      = require('react');
+var Nav        = require('./Nav.jsx');
+var Masthead   = require('./Masthead.jsx');
+var UserAnchor = require('./UserAnchor.jsx');
 
 module.exports = React.createClass({
   displayName: 'Top',
@@ -10,14 +11,12 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <header className="page-header">
-          <h1>TopPageComponent</h1>
-        </header>
-        <Nav />
-        <article>
-          <p>Please do something</p>
-        </article>
-        <Footer />
+        <UserAnchor />
+        <Nav current="dash" />
+        <Masthead title="Dashboard" />
+        <div className="admin-content">
+          <p>Main Admin Dashboard</p>
+        </div>
       </div>
     );
   }

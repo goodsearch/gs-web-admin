@@ -1,10 +1,10 @@
-var gulp = require('gulp');
+var gulp    = require('gulp');
 var nodemon = require('gulp-nodemon');
-var config = require('../config').nodemon;
+var package = require('../../package.json');
 
 gulp.task('nodemon', function() {
   return nodemon({
-    script:   config.script,
+    script:   package.main,
     execMap:  { js: 'npm start' }
   });
 });

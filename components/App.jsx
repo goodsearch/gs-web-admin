@@ -11,12 +11,14 @@ module.exports = React.createClass({
       <html lang="en">
         <head>
           <title>{this.props.path}</title>
+          <link rel="stylesheet" href="admin.css" />
         </head>
         <body>
           <div id="app" className="container">
             <RouteHandler />
           </div>
-          <script src="bundle.js"></script>
+          <script src="vendor.js"></script>
+          <script src="browser.js"></script>
         </body>
       </html>
     );

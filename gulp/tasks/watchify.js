@@ -1,7 +1,11 @@
-var gulp           = require('gulp');
-var browserifyTask = require('./browserify');
+var gulp              = require('gulp');
+var runBrowserifyTask = require('./browserify');
 
 gulp.task('watchify', function(callback) {
-  // start browserify task with devMode == true
-  browserifyTask(callback, true);
+  runBrowserifyTask({
+    watch:   true,
+    dest:    'dist/assets',
+    uglify:  false
+  });
+  callback();
 });

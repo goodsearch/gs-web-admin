@@ -1,38 +1,18 @@
-var dest = './build',
-    src  = './src';
+var dest = './dist/assets';
 
 module.exports = {
-  browserify: {
-    cache: {},
-    packageCache: {},
-    fullPaths: true,
-    bundleConfigs: [{
-      entries:     src + '/app.js',
-      dest:        dest + '/js',
-      outputName:  'app.js'
-    }]
+  browserSync: {
+    proxy: 'localhost:5000',
+    open: false
   },
 
   stylus: {
-    src:       [src + '/styles/*.styl'],
-    dest:      dest + '/css',
+    src:       ['./styles/*.styl'],
+    dest:      dest,
     settings:  {
       sourceComments:  'map',
       imagePath:       '/images',
       'include css':   true
     }
-  },
-
-  images: {
-    src:   src + '/images/**',
-    dest:  dest + '/images'
-  },
-
-  browserSync: {
-    proxy: 'localhost:8001'
-  },
-
-  nodemon: {
-    script: './index.js'
   }
 };
